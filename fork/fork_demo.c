@@ -4,14 +4,19 @@
 
 int main()
 {
-    pid_t id,fork_id,fork_ppid;
+    pid_t id;
     printf("Before the fork\n");
     id = fork();
     printf("\nAfter the fork\n");
-    //fork_id = getpid();
-    //fork_ppid = getppid();
-    printf("ID : %d\nPID : %d\n",id,getpid());
-    printf("PPID : %d\n", getppid());
 
+    if(0 == id){
+        //Child Process
+        printf("In child\n");
+        printf("PID : %d\nPPID : %d\n",getpid(), getppid());
+    }else{
+        //Parent Process
+        printf("In parent\n");
+        printf("PID : %d\nPPID : %d\n",getpid(), getppid());
+    }
     return 0;
 }
