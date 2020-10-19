@@ -1,8 +1,9 @@
 #include <stdio.h>
-//#include <uint/sys.h>
+#include <sys/types.h>
 #include <unistd.h>
 
-int main(){
+
+int main(int argc, char const argv[]){
     pid_t id;
     pid_t parent_id;
 
@@ -11,5 +12,4 @@ int main(){
     printf("PID: %d\n",id);
     printf("PPID: %d\n",parent_id);
     return 0;
-
 }
