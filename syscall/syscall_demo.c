@@ -13,7 +13,7 @@ int main(int argc, char const *argv[]){
         perror("Error in open");
         return -1;
     }
-    
+    printf("FD is %d\n", fd);
     write(fd,"Prasad",6);
     close(fd);
     return 0;
