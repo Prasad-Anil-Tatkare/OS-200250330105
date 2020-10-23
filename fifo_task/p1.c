@@ -6,8 +6,10 @@
 
 int main(int argc, char const *argv[]){
 
-    int p1_var1=10,p1_var2=20,sum,fd,fd1;
-    
+    int p1_var1,p1_var2,sum,fd,fd1;
+    printf("Enter 2 No.: ");
+    scanf("%d %d",&p1_var1,&p1_var2);
+
     mkfifo("fifo", S_IRUSR | S_IWUSR);
     fd = open("fifo", O_WRONLY);
     write(fd,&p1_var1,sizeof(p1_var1));
