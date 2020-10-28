@@ -4,7 +4,7 @@
 
 int count = 0;
 
-int main()
+int main(int argc, char const *argv[])
 {
     pid_t id;
     printf("Before the fork\n");
