@@ -16,7 +16,7 @@ void *serial_thread(void *arg){
     printf("\nSerial Configuration is:\nBaud Rate: %d\nStop Bit: %d\nParity: %c\n",((serial_con *)arg)->baud_rate,((serial_con *)arg)->stop_bit,((serial_con *)arg)->parity);
 }
 
-int main(int argc, char const *argv){
+int main(int argc, char const *argv[]){
 
     pthread_t tid;
     //struct serial_config 
