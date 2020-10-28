@@ -6,7 +6,7 @@ void *thread (void *arg){
     printf("Thread\n");
 }
 
-int main(int argc, char const *argv){
+int main(int argc, char const *argv[]){
 
     pthread_t tid;
     printf("Before thread creation.\n");
