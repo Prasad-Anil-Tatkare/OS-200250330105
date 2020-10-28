@@ -18,7 +18,7 @@ void *serial_thread(void *arg){
 
 int main(int argc, char const *argv[]){
 
-    pthread_t tid;
+    pthread_t tid1,tid2,tid3,tid4;
     //struct serial_config 
     serial_con config1, config2, config3, config4;
     config1.baud_rate = 9600;
@@ -37,10 +37,10 @@ int main(int argc, char const *argv[]){
     config4.stop_bit = 2;
     config4.parity = 'Y';
     
-    pthread_create(&tid, NULL, serial_thread, &config1);
-    pthread_create(&tid, NULL, serial_thread, &config2);
-    pthread_create(&tid, NULL, serial_thread, &config3);
-    pthread_create(&tid, NULL, serial_thread, &config4);
+    pthread_create(&tid1, NULL, serial_thread, &config1);
+    pthread_create(&tid2, NULL, serial_thread, &config2);
+    pthread_create(&tid3, NULL, serial_thread, &config3);
+    pthread_create(&tid4, NULL, serial_thread, &config4);
     
     sleep(1);
     return 0;
