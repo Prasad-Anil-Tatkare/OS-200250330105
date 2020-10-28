@@ -5,23 +5,28 @@
 int count = 0;
 
 void *inc_thread (void *arg){
-    count++;
-    printf("Inc Thread: %d\n",count);
+    while(1){
+        count++;
+        printf("Inc Thread: %d\n",count);
+    }
 }
 
 void *dec_thread (void *arg){
-    count--;
-    printf("Dec Thread: %d\n",count);
+    while(1){
+        count--;
+        printf("Dec Thread: %d\n",count);
+    }
 }
 
 int main(int argc, char const *argv[]){
 
-    pthread_t tid;
-    printf("Before thread creation.\n");
-    pthread_create(&tid, NULL, thread, NULL);
-    printf("After thread creation.\n");
-    sleep(1);
-    printf("After sleep creation.\n");
+    pthread_t inc_tid, dec_tid;
 
+    pthread_create(&inc_tid, NULL, inc_thread, NULL);
+    pthread_create(&dec_tid, NULL, dec_thread, NULL);
+    
+    pthread_join(inc_tid, NULL);
+    pthread_join(dec_tid, NULL);
+    
     return 0;
 }
